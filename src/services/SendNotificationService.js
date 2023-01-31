@@ -10,7 +10,7 @@ export default class SendNotificationService {
     subscribedUsers.forEach((user) => {
       user.channels.map((channel) => {
         const notificationStrategy = new NotificationStrategy();
-        notificationStrategy.getStrategy(channel).send(user, message);
+        notificationStrategy.getStrategy(channel).send(user, category, message);
       });
     });
   }

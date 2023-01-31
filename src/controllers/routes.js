@@ -1,3 +1,4 @@
+import {application} from "express";
 import MessageController from "./MessageController.js";
 import UserController from "./UserController.js";
 import sendMessageValidator from "./validators/SendMessageValidator.js";
@@ -11,7 +12,7 @@ const routes = (app) => {
     res.json(response);
   });
 
-  app.post("/api/message", (req, res, next) => {
+  app.post("/api/messages", (req, res, next) => {
     const {category, message} = sendMessageValidator(req, res, next);
 
     try {
@@ -21,6 +22,11 @@ const routes = (app) => {
     }
 
     res.status(201).send();
+  });
+
+  app.get("/api/messages", (req, res) => {
+    const response = messageController.getMessages();
+    res.json(response);
   });
 };
 

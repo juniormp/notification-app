@@ -1,8 +1,9 @@
-import sentMessageData from "../../db/messages.js";
+import sentMessageData from "../../db/sentMessageData.js";
+import Message from "../model/message.js";
 
 export default class SMSNotificationStrategy {
-  send(user, message) {
-    console.log(`Sending SMS to ${user.name}: ${message}`);
+  send(user, category, message) {
+    sentMessageData.push(new Message(category, message, Date.now()));
     this.log(user, message);
   }
 
