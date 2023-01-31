@@ -13,7 +13,7 @@ export default class NotificationStrategy {
       case ChannelType.Push:
         return new PushNotificationStrategy();
       default:
-        console.log("invalid channel");
+        throw new Error("Invalid Channel");
     }
   }
 }

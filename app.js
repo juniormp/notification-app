@@ -13,7 +13,12 @@ app.get("/api/users", (req, res) => {
 app.post("/api/message", (req, res) => {
   const {category, message} = req.body;
   const sendNotification = new SendNotificationService();
-  sendNotification.sendNotification(category, message);
+
+  try {
+    sendNotification.sendNotification(category, message);
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
 
   res.status(201).send();
 });
