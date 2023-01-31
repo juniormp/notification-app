@@ -1,5 +1,6 @@
 import MessageController from "./MessageController.js";
 import UserController from "./UserController.js";
+import sendMessageValidator from "./validators/SendMessageValidator.js";
 
 const routes = (app) => {
   const userController = new UserController();
@@ -10,8 +11,8 @@ const routes = (app) => {
     res.json(response);
   });
 
-  app.post("/api/message", (req, res) => {
-    const {category, message} = req.body;
+  app.post("/api/message", (req, res, next) => {
+    const {category, message} = sendMessageValidator(req, res, next);
 
     try {
       messageController.sendMessage(category, message);
