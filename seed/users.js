@@ -6,24 +6,24 @@ const users = [
     "Mauricio Junior",
     "junior9771@gmail.com",
     "+551198989898",
-    ["Sports"],
-    ["Push Notification"]
+    ["SPORTS"],
+    ["PUSH_NOTIFICATION"]
   ),
   new User(
     2,
     "Bob",
     "bob@gmail.com",
     "+5511973737373",
-    ["Movies"],
-    ["SMS", "Push Notification"]
+    ["MOVIES"],
+    ["SMS", "PUSH_NOTIFICATION"]
   ),
   new User(
     3,
     "User 3",
     "user3@example.com",
     "+5511984844848",
-    ["Finance"],
-    ["Email", "Push Notification"]
+    ["FINANCE"],
+    ["EMAIL", "PUSH_NOTIFICATION"]
   ),
 ];
 
