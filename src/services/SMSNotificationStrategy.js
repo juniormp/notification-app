@@ -1,7 +1,6 @@
-import sentMessageData from "../../db/messages";
-import INotificationStrategy from "./INotificationStrategy";
+import sentMessageData from "../../db/messages.js";
 
-class SMSNotificationStrategy extends INotificationStrategy {
+export default class SMSNotificationStrategy {
   send(user, message) {
     console.log(`Sending SMS to ${user.name}: ${message}`);
     this.log(user, message);
