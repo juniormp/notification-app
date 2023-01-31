@@ -1,7 +1,7 @@
 import sentMessageData from "../../db/messages";
-import INotification from "./INotification";
+import INotificationStrategy from "./INotificationStrategy";
 
-class EmailNotification extends INotification {
+class EmailNotificationStrategy extends INotificationStrategy {
   send(user, message) {
     console.log(`Sending email to ${user.name}: ${message}`);
     this.log(user, message);

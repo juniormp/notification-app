@@ -1,7 +1,7 @@
 import sentMessageData from "../../db/messages";
-import INotification from "./INotification";
+import INotificationStrategy from "./INotificationStrategy";
 
-class PushNotification extends INotification {
+class PushNotificationStrategy extends INotificationStrategy {
   send(user, message) {
     console.log(`Sending push notification to ${user.name}: ${message}`);
     this.log(user, message);
