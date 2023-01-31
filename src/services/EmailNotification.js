@@ -3,14 +3,15 @@ import INotification from "./INotification";
 
 class EmailNotification extends INotification {
   send(user, message) {
-    console.log(
-      `Sending Email to ${user.name} (${user.email}): ${message.content}`
-    );
+    console.log(`Sending email to ${user.name}: ${message}`);
+    this.log(user, message);
+  }
 
-    sentMessageData.push({
-      userId: user.id,
-      channel: "Email",
-      message: message,
-    });
+  log(message, user) {
+    console.log(
+      `Email log: Message "${message}" sent to ${
+        user.name
+      } at ${new Date().toLocaleString()}`
+    );
   }
 }

@@ -3,14 +3,15 @@ import INotification from "./INotification";
 
 class SMSNotification extends INotification {
   send(user, message) {
-    console.log(
-      `Sending SMS to ${user.name} (${user.phoneNumber}): ${message.content}`
-    );
+    console.log(`Sending SMS to ${user.name}: ${message}`);
+    this.log(user, message);
+  }
 
-    sentMessageData.push({
-      userId: user.id,
-      channel: "SMS",
-      message: message,
-    });
+  log(user, message) {
+    console.log(
+      `SMS log: Message "${message}" sent to ${
+        user.name
+      } at ${new Date().toLocaleString()}`
+    );
   }
 }

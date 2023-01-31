@@ -1,14 +1,17 @@
 import sentMessageData from "../../db/messages";
 import INotification from "./INotification";
 
-class EmailNotification extends INotification {
+class PushNotification extends INotification {
   send(user, message) {
-    console.log(`Sending Push Notification to ${user.name}`);
+    console.log(`Sending push notification to ${user.name}: ${message}`);
+    this.log(user, message);
+  }
 
-    sentMessageData.push({
-      userId: user.id,
-      channel: "Email",
-      message: message,
-    });
+  log(user, message) {
+    console.log(
+      `Push log: Message "${message}" sent to ${
+        user.name
+      } at ${new Date().toLocaleString()}`
+    );
   }
 }

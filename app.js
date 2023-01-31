@@ -1,5 +1,5 @@
-const express = require("express");
-const users = require("./seed/users");
+import express from "express";
+import users from "./seed/users.js";
 
 const app = express();
 
