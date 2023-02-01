@@ -1,3 +1,4 @@
+import MessageType from "../model/MessageType.js";
 import GetMessagesService from "../services/GetMessagesService.js";
 import SendNotificationService from "../services/SendNotificationService.js";
 
@@ -13,5 +14,9 @@ export default class MessageController {
 
   getMessages() {
     return this.getMessageService.execute();
+  }
+
+  getCategories() {
+    return [MessageType.Finance, MessageType.Sports, MessageType.Movies];
   }
 }

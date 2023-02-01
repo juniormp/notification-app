@@ -28,6 +28,11 @@ const routes = (app) => {
     const response = messageController.getMessages();
     res.json(response);
   });
+
+  app.get("/api/messages/categories", (req, res) => {
+    const response = messageController.getCategories();
+    res.json(response);
+  });
 };
 
 export default routes;
