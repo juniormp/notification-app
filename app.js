@@ -1,10 +1,17 @@
 import express from "express";
 import routes from "./src/controllers/routes.js";
 import ErrorHandler from "./src/middleware/ErrorHandler.js";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 routes(app);
 
