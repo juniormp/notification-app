@@ -1,4 +1,3 @@
-import {application} from "express";
 import MessageController from "./MessageController.js";
 import UserController from "./UserController.js";
 import sendMessageValidator from "./validators/SendMessageValidator.js";
