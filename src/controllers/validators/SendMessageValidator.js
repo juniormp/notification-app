@@ -8,7 +8,7 @@ const sendMessageValidator = (req, res, next) => {
       .valid(MessageType.Finance, MessageType.Movies, MessageType.Sports)
       .required(),
 
-    message: Joi.string().min(3).max(300).required(),
+    message: Joi.string().min(1).max(300).required(),
   });
 
   const {error, value} = schema.validate(req.body);
