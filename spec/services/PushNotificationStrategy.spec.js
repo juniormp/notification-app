@@ -1,5 +1,4 @@
 import Message from "../../src/model/Message.js";
-import jest from "jest-mock";
 import sentMessageData from "../../db/sentMessageData.js";
 import PushNotificationStrategy from "../../src/services/PushNotificationStrategy.js";
 

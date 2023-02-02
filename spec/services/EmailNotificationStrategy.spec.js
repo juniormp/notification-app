@@ -1,6 +1,5 @@
 import Message from "../../src/model/Message.js";
 import EmailNotificationStrategy from "../../src/services/EmailNotificationStrategy.js";
-import jest from "jest-mock";
 import sentMessageData from "../../db/sentMessageData.js";
 
 describe("EmailNotificationStrategy", () => {
