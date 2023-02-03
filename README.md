@@ -4,6 +4,7 @@
 ## Project Setup
 
 - `npm install`
+- `npm run test`
 - `nodemon app.js`
 
 ## Architecture and Design 
